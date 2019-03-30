@@ -15,9 +15,15 @@ export default class ActInfo extends Component {
     performers: []
   }
   goSearchPage = (artist) => {
-    Taro.reLaunch({
+    const obj = {
       url: `/pages/index/index?keyword=${encodeURIComponent(artist)}`
-    })
+    }
+    if (process.env.TARO_ENV === 'weapp') {
+      Taro.reLaunch(obj)
+    }
+    if (process.env.TARO_ENV === 'h5') {
+      Taro.redirectTo(obj)
+    }
   }
   imgPreview () {
     let url = globalUri + '/' + this.props.imageUrl.replace(/thumb/ig, 'upload')
@@ -40,7 +46,7 @@ export default class ActInfo extends Component {
             <View className='inner'>
               <View className='small-img'>
                 {
-                  imageUrl && <Image className='full-width' mode='widthFix' src={`${globalUri}/${imageUrl}`} onClick={this.imgPreview} />
+                  imageUrl && <Image mode='widthFix' src={`${globalUri}/${imageUrl}`} onClick={this.imgPreview.bind(this)} />
                 }
             </View>
             <Text className='title'>{title}</Text>

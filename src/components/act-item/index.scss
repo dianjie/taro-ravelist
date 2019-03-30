@@ -1,12 +1,14 @@
+.taro-img {
+  width: inherit;
+  height: inherit;
+}
 // item下的image一般都是不透明的，所以不用监听加载再动态加loaded类名
 .item{
   color: inherit;
   position: relative;
   outline: none;
-  //margin: 0 13px;
   cursor: pointer;
   user-select: none;
-  //padding: 10px 0;
   padding: 10px;
   border-bottom: 1px solid #eee;
   overflow:auto;

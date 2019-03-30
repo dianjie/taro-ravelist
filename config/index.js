@@ -76,6 +76,10 @@ const config = {
   h5: {
     publicPath: '/',
     staticDirectory: 'static',
+    esnextModules: ['taro-ui'],
+    devServer: {
+      port: 3000,
+    },
     module: {
       postcss: {
         autoprefixer: {

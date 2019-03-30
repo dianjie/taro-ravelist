@@ -1,10 +1,11 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
-
-import WxParse from './assets/wxParse/wxParse'
-
 import './wxParse.scss'
 
+let WxParse = {wxParse: () => {}}
+if (process.env.TARO_ENV === 'weapp') {
+  WxParse = require('./assets/wxParse/wxParse')
+}
 export default class ParseComponent extends Component {
   static defaultProps = {
     detail: '<div style="color: red">我是默认显示内容</div>'

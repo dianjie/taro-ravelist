@@ -1,6 +1,6 @@
 .img-box{
   position: relative;
-  height: 800rpx;
+  height: 800px;
   overflow: hidden;
   .big-img{
     display: -webkit-box;
@@ -12,7 +12,7 @@
     min-height: 100%;
     .bg{
       width: 100%;
-      height: 800rpx;
+      height: 800px;
       -webkit-filter: blur(7px);
       filter: blur(7px);
     }
@@ -36,21 +36,21 @@
     overflow: hidden;
     .inner{
       text-align: center;
-      max-height: 800rpx;
+      max-height: 800px;
       .small-img{
-        width: 360rpx;
+        width: 360px;
         margin: 0 auto .8rem;
-        max-width: 400rpx;
-        max-height: 650rpx;
+        max-width: 400px;
+        max-height: 650px;
         font-size: 0;
-        -webkit-box-shadow: 4rpx 4rpx 4rpx rgba(0, 0, 0, 0.3);
-        box-shadow: 4rpx 4rpx 4rpx rgba(0, 0, 0, 0.3);
-        .full-width {
+        -webkit-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+        Image {
           width: 100%;
         }
       }
       .title{
-        font-size: 32rpx;
+        font-size: 32px;
         color: #fff;
         margin: 0 1.0667rem;
         display: block;
@@ -70,7 +70,6 @@
   font-size: 14Px;
   box-sizing: border-box;
   max-width: 100%;
-  //overflow: hidden;
   background-color: #fff;
   .inner{
     padding-bottom:.7rem;

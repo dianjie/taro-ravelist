@@ -79,20 +79,33 @@ export default class Index extends Component {
     })
     // 清空了搜索
     if(!value && this.preSearch !== value) {
-      this.loadList({
-        cityCode : '',
-        keyword: '',
-        page: 1
-      })
-      this.preSearch = ''
+      if (process.env.TARO_ENV === 'h5') {
+        Taro.redirectTo({
+          url: `/pages/index/index`
+        })
+      } else {
+        this.loadList({
+          cityCode : '',
+          keyword: '',
+          page: 1
+        })
+        this.preSearch = ''
+      }
     }
   }
   onActionClick () {
-    this.loadList()
+    if (process.env.TARO_ENV === 'h5') {
+      const { value } =  this.state
+      Taro.redirectTo({
+        url: `/pages/index/index?keyword=${encodeURIComponent(value)}`
+      })
+    } else {
+      this.loadList()
+    }
   }
   render () {
     const {list, value, loading, info} = this.state
-    const height = getWindowHeight() - 45
+    const height = getWindowHeight(false) - 45
     return (
       <View>
         <View>

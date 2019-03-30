@@ -66,7 +66,8 @@ export default class ActDetail extends Component {
           venueName={venueName}
           performers={performers}
         />
-        { process.env.TARO_ENV === 'weapp' ? <ParseComponent detail={detail} /> : <View>只在小程序里支持</View> }
+        { process.env.TARO_ENV === 'weapp' ? <ParseComponent detail={detail} /> : null }
+        { process.env.TARO_ENV === 'h5' ? <View className='htmlContent' dangerouslySetInnerHTML={{ __html: detail }} /> : null }
       </View>
     )
   }
